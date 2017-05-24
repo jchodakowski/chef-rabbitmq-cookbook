@@ -38,7 +38,7 @@ end
 current_erlang = 'Erlang OTP 18 (7.3)'
 current_erlang_installed = is_package_installed?(current_erlang)
 erlang_is_installed = windows_package current_erlang do
-  source node['vbrick']['avenger']['erlang']['installer.exe']
+  source node['erlang']['installer.exe']
   action :install
   not_if { current_erlang_installed == true }
 end
